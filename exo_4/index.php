@@ -2,7 +2,7 @@
 
 require_once('./database.connect.php');
 
-$request = $database->query('SELECT * FROM clients INNER JOIN cards ON cards.cardNumber = clients.cardNumber WHERE cardTypesId=1');
+$request = $database->query('SELECT * FROM clients INNER JOIN cards ON cards.cardNumber = clients.cardNumber WHERE cards.cardTypesId=1');
 
 $cardtypes = $request->fetchALL();
 

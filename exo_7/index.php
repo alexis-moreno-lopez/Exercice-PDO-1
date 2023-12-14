@@ -2,11 +2,11 @@
 
 require_once('./database.connect.php');
 
-$request = $database->query('SELECT * FROM clients');
+$request = $database->query('SELECT * FROM clients LEFT JOIN cards ON clients.carNumber = card.cardNumber');
 
-$clients = $request->fetchAll();
+$allclients = $request->fetchAll();
 
-var_dump($clients);
+var_dump($allclients);
 
 
 ?>
@@ -22,7 +22,7 @@ var_dump($clients);
 
         <ul>
             <?php
-            foreach ($clients as $client) {
+            foreach ($allclients as $client) {
                 echo '<li> Nom : '. $client['lastName'] .' <P> '. 'prénom : '. $client['firstName'].' <p>'. 'Date de Naissance : ' . $client['birthDate'].' <p>'.'Carte de fidelité : '. $client['card'].'<P> Numéro de carte : '. $client['cardNumber'].' </li>';
             }
             

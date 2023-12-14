@@ -17,6 +17,14 @@ var_dump($clients);
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Tous les clients :</h2>
+    <ul>
+        <?php
+foreach($clients as $client){
+    echo '<li>' . $client["firstName"] . ' ' . $client["lastName"] .'</li>';
+}
+
+        ?>
+    </ul>
 </body>
 </html>

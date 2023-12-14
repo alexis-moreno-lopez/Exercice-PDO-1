@@ -2,7 +2,7 @@
 
 require_once('./database.connect.php');
 
-$request = $database->query('SELECT * FROM `clients` LIMIT 21;');
+$request = $database->query('SELECT * FROM `clients` LIMIT 20;');
 
 $clients = $request->fetchAll();
 
